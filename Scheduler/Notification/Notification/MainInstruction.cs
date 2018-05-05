@@ -17,6 +17,8 @@ namespace Notification
 {
     public partial class MainInstruction : ServiceBase
     {
+        List<DataForNotification> _data = new List<DataForNotification>();
+        static DataForNotification  _currentNotification = new DataForNotification();
         public MainInstruction()
         {
             InitializeComponent();
@@ -24,6 +26,7 @@ namespace Notification
 
         protected override void OnStart(string[] args)
         {
+            //todo get current date and time from file 
             DateTime date = DateTime.Now;
 
             TimerCallback timerCallback = new TimerCallback(FileExam);
@@ -35,21 +38,36 @@ namespace Notification
         {
             DateTime now = (DateTime) obj;
 
-            List<DataForNotification> data = new List<DataForNotification>(); 
             DataEncryption workingWithFile = new DataEncryption();
 
-            data = workingWithFile.ReadFileEncrypted();
+            _data = workingWithFile.ReadFileEncrypted();
 
-            data.Sort();//?
+            _data.Sort();//?
+            _currentNotification = _data[0];
 
-            if (now.Date == data[0].DateAndTime.Date)
-                if (now.Hour == data[0].DateAndTime.Hour)
-                    if (now.Minute == data[0].DateAndTime.Minute)
+            if (now.Date == _currentNotification.DateAndTime.Date)
+                if (now.Hour == _currentNotification.DateAndTime.Hour)
+                    if (now.Minute == _currentNotification.DateAndTime.Minute)
+                    {
+                        
+                        Thread callNotificationForm = new Thread(CallForm);
 
+                        callNotificationForm.Start();
+                        
+                    }
+                       
+
+        }
+
+        static void CallForm()
+        {
+            NotificationForm form = new NotificationForm(_currentNotification);
+            form.ShowDialog();
         }
 
         protected override void OnStop()
         {
+            // todo write current date and time to file
         }
     }
 }

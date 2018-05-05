@@ -32,11 +32,11 @@
             this.TimeLable = new System.Windows.Forms.Label();
             this.NameLable = new System.Windows.Forms.Label();
             this.GroupLable = new System.Windows.Forms.Label();
+            this.PriorityTextLable = new System.Windows.Forms.Label();
             this.PriorityLable = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.PostponeButton = new System.Windows.Forms.Button();
+            this.CloseButton = new System.Windows.Forms.Button();
+            this.CommentTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // DateLable
@@ -86,68 +86,70 @@
             this.GroupLable.TabIndex = 4;
             this.GroupLable.Text = "Дела по дому";
             // 
+            // PriorityTextLable
+            // 
+            this.PriorityTextLable.AutoSize = true;
+            this.PriorityTextLable.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PriorityTextLable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(11)))), ((int)(((byte)(106)))));
+            this.PriorityTextLable.Location = new System.Drawing.Point(3, 9);
+            this.PriorityTextLable.Name = "PriorityTextLable";
+            this.PriorityTextLable.Size = new System.Drawing.Size(118, 28);
+            this.PriorityTextLable.TabIndex = 5;
+            this.PriorityTextLable.Text = "Приоритет:";
+            // 
             // PriorityLable
             // 
             this.PriorityLable.AutoSize = true;
             this.PriorityLable.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PriorityLable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(11)))), ((int)(((byte)(106)))));
-            this.PriorityLable.Location = new System.Drawing.Point(3, 9);
+            this.PriorityLable.Location = new System.Drawing.Point(114, 9);
             this.PriorityLable.Name = "PriorityLable";
-            this.PriorityLable.Size = new System.Drawing.Size(118, 28);
-            this.PriorityLable.TabIndex = 5;
-            this.PriorityLable.Text = "Приоритет:";
+            this.PriorityLable.Size = new System.Drawing.Size(82, 28);
+            this.PriorityLable.TabIndex = 6;
+            this.PriorityLable.Text = "Высокий";
             // 
-            // label1
+            // PostponeButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(11)))), ((int)(((byte)(106)))));
-            this.label1.Location = new System.Drawing.Point(114, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 28);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Высокий";
+            this.PostponeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(158)))), ((int)(((byte)(248)))));
+            this.PostponeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
+            this.PostponeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PostponeButton.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PostponeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(11)))), ((int)(((byte)(106)))));
+            this.PostponeButton.Location = new System.Drawing.Point(17, 205);
+            this.PostponeButton.Name = "PostponeButton";
+            this.PostponeButton.Size = new System.Drawing.Size(152, 43);
+            this.PostponeButton.TabIndex = 7;
+            this.PostponeButton.Text = "Отложить";
+            this.PostponeButton.UseVisualStyleBackColor = false;
+            this.PostponeButton.Click += new System.EventHandler(this.PostponeButton_Click);
             // 
-            // button1
+            // CloseButton
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(158)))), ((int)(((byte)(248)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(11)))), ((int)(((byte)(106)))));
-            this.button1.Location = new System.Drawing.Point(17, 205);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 43);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Отложить";
-            this.button1.UseVisualStyleBackColor = false;
+            this.CloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(158)))), ((int)(((byte)(248)))));
+            this.CloseButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
+            this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseButton.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CloseButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(11)))), ((int)(((byte)(106)))));
+            this.CloseButton.Location = new System.Drawing.Point(232, 205);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(152, 43);
+            this.CloseButton.TabIndex = 8;
+            this.CloseButton.Text = "Закрыть";
+            this.CloseButton.UseVisualStyleBackColor = false;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
-            // button2
+            // CommentTextBox
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(158)))), ((int)(((byte)(248)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(11)))), ((int)(((byte)(106)))));
-            this.button2.Location = new System.Drawing.Point(232, 205);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(152, 43);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Закрыть";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(99)))), ((int)(((byte)(229)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(249)))), ((int)(((byte)(154)))));
-            this.textBox1.Location = new System.Drawing.Point(190, 86);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(198, 113);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.Text = "Полить цветы на подоконнике и на балконе";
+            this.CommentTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(99)))), ((int)(((byte)(229)))));
+            this.CommentTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CommentTextBox.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CommentTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(249)))), ((int)(((byte)(154)))));
+            this.CommentTextBox.Location = new System.Drawing.Point(190, 86);
+            this.CommentTextBox.Multiline = true;
+            this.CommentTextBox.Name = "CommentTextBox";
+            this.CommentTextBox.Size = new System.Drawing.Size(198, 113);
+            this.CommentTextBox.TabIndex = 9;
+            this.CommentTextBox.Text = "Полить цветы на подоконнике и на балконе";
             // 
             // NotificationForm
             // 
@@ -156,17 +158,18 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(99)))), ((int)(((byte)(229)))));
             this.ClientSize = new System.Drawing.Size(400, 256);
             this.ControlBox = false;
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.CommentTextBox);
+            this.Controls.Add(this.CloseButton);
+            this.Controls.Add(this.PostponeButton);
             this.Controls.Add(this.PriorityLable);
+            this.Controls.Add(this.PriorityTextLable);
             this.Controls.Add(this.GroupLable);
             this.Controls.Add(this.NameLable);
             this.Controls.Add(this.TimeLable);
             this.Controls.Add(this.DateLable);
             this.Name = "NotificationForm";
             this.Text = "Оповещение";
+            this.Load += new System.EventHandler(this.NotificationForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,10 +181,10 @@
         private System.Windows.Forms.Label TimeLable;
         private System.Windows.Forms.Label NameLable;
         private System.Windows.Forms.Label GroupLable;
+        private System.Windows.Forms.Label PriorityTextLable;
         private System.Windows.Forms.Label PriorityLable;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button PostponeButton;
+        private System.Windows.Forms.Button CloseButton;
+        private System.Windows.Forms.TextBox CommentTextBox;
     }
 }
