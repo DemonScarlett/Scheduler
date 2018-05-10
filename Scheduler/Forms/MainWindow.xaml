@@ -1,0 +1,55 @@
+﻿<Window x:Name="MainWindowForm" x:Class="Scheduler.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Scheduler"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="535.527" Width="1121.052" Background="#FFB563E5" WindowStartupLocation="CenterScreen">
+    <Window.ContextMenu>
+        <ContextMenu/>
+    </Window.ContextMenu>
+    <Grid x:Name="MainWindowFormGrid" Background="#FFB563E5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="149*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="81*"/>
+            <RowDefinition Height="81*"/>
+            <RowDefinition Height="115*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="11*"/>
+        </Grid.ColumnDefinitions>
+        <ListView x:Name="TasksListView" HorizontalAlignment="Left" Height="506" VerticalAlignment="Top" Width="691" Background="#FF9163AC" AutomationProperties.IsRequiredForForm="True" ItemsSource="{Binding Path=_todayTasks}" Foreground="#FF1C1029" FontFamily="Segoe Print" FontSize="16" Grid.RowSpan="5">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="ToolTip">
+                        <Setter.Value>
+                            <TextBlock Text ="{Binding Path=Comment}"/>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.Resources>
+                <Style TargetType="GridViewColumnHeader">
+                    <Setter Property="Visibility" Value="Collapsed" />
+                </Style>
+            </ListView.Resources>
+            <ListView.View>
+                <GridView >
+                    <GridViewColumn x:Name="TimeCol" DisplayMemberBinding="{Binding Path= Time }"></GridViewColumn>
+                    <GridViewColumn x:Name="NameCol" DisplayMemberBinding="{Binding  Path= Name }"></GridViewColumn>
+                    <GridViewColumn x:Name="PriorityCol" DisplayMemberBinding="{Binding  Path= Priority}"></GridViewColumn>
+                    <GridViewColumn x:Name="StatusCol"></GridViewColumn>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Добавить" Grid.Column="1" HorizontalAlignment="Left" Height="92" Margin="24,29,0,0" VerticalAlignment="Top" Width="377" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="18"/>
+        <Button Content="Группы" Grid.Column="1" HorizontalAlignment="Left" Height="67" Margin="150,6,0,0" VerticalAlignment="Top" Width="251" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="18" Grid.Row="1"/>
+        <Button Content="Настройки" Grid.Column="1" HorizontalAlignment="Left" Height="67" Margin="150,7,0,0" VerticalAlignment="Top" Width="251" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="18" Grid.Row="3"/>
+        <Button Content="Календарь" Grid.Column="1" HorizontalAlignment="Left" Height="67" Margin="150,6,0,0" VerticalAlignment="Top" Width="251" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="18" Grid.Row="2"/>
+
+    </Grid>
+</Window>
