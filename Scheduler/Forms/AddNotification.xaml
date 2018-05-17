@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Scheduler.Forms"
         mc:Ignorable="d"
-        Title="AddNotificationWindow" Height="384.248" Width="489.865" Background="#FFB563E5" FontFamily="Segoe Print" FontSize="15">
+        Title="AddNotificationWindow" Height="478.985" Width="687.233" Background="#FFB563E5" FontFamily="Segoe Print" FontSize="15">
     <Grid Margin="0,0,2,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="195*"/>
@@ -25,10 +25,21 @@
                 </LinearGradientBrush>
             </Calendar.BorderBrush>
         </Calendar>
-        <Label Content="в" Grid.Column="1" HorizontalAlignment="Left" Margin="56,150,0,0" VerticalAlignment="Top" Foreground="#FFF9F2FD"/>
-        <TextBox x:Name="TimeTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="95,150,0,0" TextWrapping="Wrap" Text="18:10" VerticalAlignment="Top" Width="59"/>
-        <Label Content="Мелодия:" HorizontalAlignment="Left" Margin="134,89,0,0" VerticalAlignment="Top" Foreground="#FFF9F2FD" Grid.Row="1"/>
-        <ComboBox HorizontalAlignment="Left" Height="34" Margin="222,90,0,0" Grid.Row="1" VerticalAlignment="Top" Width="171" Grid.ColumnSpan="2">
+        <Label Content="в" HorizontalAlignment="Left" Margin="308,149,0,0" VerticalAlignment="Top" Foreground="#FFF9F2FD"/>
+        <TextBox x:Name="TimeTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="10,149,0,0" TextWrapping="Wrap" Text="18:10" VerticalAlignment="Top" Width="59"/>
+        <Label Content="Мелодия:" HorizontalAlignment="Left" Margin="74,125,0,0" VerticalAlignment="Top" Foreground="#FFF9F2FD" Grid.Row="1" Grid.Column="1"/>
+        <ComboBox HorizontalAlignment="Left" Height="34" Margin="159,149,0,0" Grid.Row="1" VerticalAlignment="Top" Width="171" Grid.Column="1">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.517"/>
+                    <GradientStop Color="Transparent" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
+        <Label Content="Частота напоминаний:" HorizontalAlignment="Left" Margin="291,45,0,0" VerticalAlignment="Top" Foreground="#FFF9F2FD" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <ComboBox HorizontalAlignment="Left" Height="34" Margin="159,69,0,0" Grid.Row="1" VerticalAlignment="Top" Width="171" Grid.Column="1">
             <ComboBox.Background>
                 <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                     <GradientStop Color="#FFF3F3F3" Offset="0"/>
