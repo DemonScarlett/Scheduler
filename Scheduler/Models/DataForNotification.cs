@@ -14,6 +14,7 @@ namespace Scheduler.Models
         public string Comment { set; get; }
         public DateTime DateAndTime { set; get; }
         public byte Priority { set; get; }
+        public bool Status { get; set; }
 
     }
 }

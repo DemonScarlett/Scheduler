@@ -57,9 +57,16 @@
     <Compile Include="Forms\AddNotification.xaml.cs">
       <DependentUpon>AddNotification.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AddTask.xaml.cs">
+      <DependentUpon>AddTask.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\TasksViewModel.cs" />
     <Compile Include="Security\DataEncryption.cs" />
     <Page Include="Forms\AddNotification.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\AddTask.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -21,7 +21,7 @@
             <ColumnDefinition Width="18*"/>
             <ColumnDefinition Width="11*"/>
         </Grid.ColumnDefinitions>
-        <ListView x:Name="TasksListView" HorizontalAlignment="Left" Height="506" VerticalAlignment="Top" Width="691" Background="#FF9163AC" AutomationProperties.IsRequiredForForm="True" ItemsSource="{Binding Path=_todayTasks}" Foreground="#FF1C1029" FontFamily="Segoe Print" FontSize="16" Grid.RowSpan="5">
+        <ListView x:Name="TasksListView" HorizontalAlignment="Left" Height="506" VerticalAlignment="Top" Width="691" Background="#FF9163AC" AutomationProperties.IsRequiredForForm="True" ItemsSource="{Binding Path=_todayTasks}" Foreground="#FFE4C0FA" FontFamily="Segoe Print" FontSize="16" Grid.RowSpan="5">
             <ListView.ItemContainerStyle>
                 <Style TargetType="{x:Type ListViewItem}">
                     <Setter Property="ToolTip">
@@ -41,15 +41,14 @@
                     <GridViewColumn x:Name="TimeCol" DisplayMemberBinding="{Binding Path= Time }"></GridViewColumn>
                     <GridViewColumn x:Name="NameCol" DisplayMemberBinding="{Binding  Path= Name }"></GridViewColumn>
                     <GridViewColumn x:Name="PriorityCol" DisplayMemberBinding="{Binding  Path= Priority}"></GridViewColumn>
-                    <GridViewColumn x:Name="StatusCol"></GridViewColumn>
-                    <GridViewColumn/>
+                    <GridViewColumn x:Name="StatusCol" DisplayMemberBinding="{Binding  Path= Status}"></GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Добавить" Grid.Column="1" HorizontalAlignment="Left" Height="92" Margin="24,29,0,0" VerticalAlignment="Top" Width="377" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="18"/>
-        <Button Content="Группы" Grid.Column="1" HorizontalAlignment="Left" Height="67" Margin="150,6,0,0" VerticalAlignment="Top" Width="251" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="18" Grid.Row="1"/>
-        <Button Content="Настройки" Grid.Column="1" HorizontalAlignment="Left" Height="67" Margin="150,7,0,0" VerticalAlignment="Top" Width="251" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="18" Grid.Row="3"/>
-        <Button Content="Календарь" Grid.Column="1" HorizontalAlignment="Left" Height="67" Margin="150,6,0,0" VerticalAlignment="Top" Width="251" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="18" Grid.Row="2"/>
+        <Button x:Name="AddButton" Content="Добавить" Grid.Column="1" HorizontalAlignment="Left" Height="92" Margin="24,29,0,0" VerticalAlignment="Top" Width="377" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="18" Click="AddButton_Click"/>
+        <Button x:Name="GroupButton" Content="Группы" Grid.Column="1" HorizontalAlignment="Left" Height="67" Margin="150,6,0,0" VerticalAlignment="Top" Width="251" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="18" Grid.Row="1"/>
+        <Button x:Name="SettingButton" Content="Настройки" Grid.Column="1" HorizontalAlignment="Left" Height="67" Margin="150,7,0,0" VerticalAlignment="Top" Width="251" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="18" Grid.Row="3"/>
+        <Button x:Name="CalendarButton" Content="Календарь" Grid.Column="1" HorizontalAlignment="Left" Height="67" Margin="150,6,0,0" VerticalAlignment="Top" Width="251" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="18" Grid.Row="2"/>
 
     </Grid>
 </Window>
