@@ -49,6 +49,7 @@
         <Button x:Name="GroupButton" Content="Группы" Grid.Column="1" HorizontalAlignment="Left" Height="67" Margin="150,6,0,0" VerticalAlignment="Top" Width="251" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="18" Grid.Row="1"/>
         <Button x:Name="SettingButton" Content="Настройки" Grid.Column="1" HorizontalAlignment="Left" Height="67" Margin="150,7,0,0" VerticalAlignment="Top" Width="251" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="18" Grid.Row="3"/>
         <Button x:Name="CalendarButton" Content="Календарь" Grid.Column="1" HorizontalAlignment="Left" Height="67" Margin="150,6,0,0" VerticalAlignment="Top" Width="251" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="18" Grid.Row="2"/>
+        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="150,63,0,0" Grid.Row="4" VerticalAlignment="Top" Width="141" Click="Button_Click"/>
 
     </Grid>
 </Window>

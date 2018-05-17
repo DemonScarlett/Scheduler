@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Scheduler.Forms;
 using Scheduler.Models;
 
 namespace Scheduler
@@ -73,6 +74,12 @@ namespace Scheduler
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AddNotificationWindow form = new AddNotificationWindow();
+            form.ShowDialog();
         }
     }
 }

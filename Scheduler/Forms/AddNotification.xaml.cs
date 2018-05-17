@@ -15,12 +15,14 @@ using System.Windows.Shapes;
 namespace Scheduler.Forms
 {
     /// <summary>
-    /// Interaction logic for MainScreen.xaml
+    /// Interaction logic for AddNotificationWindow.xaml
     /// </summary>
-    public partial class MainScreen : Window
+    public partial class AddNotificationWindow : Window
     {
-        public MainScreen()
+        public AddNotificationWindow()
         {
+            //todo add sounds to notif
+            //todo поставить дату и время по умолчанию такими же, как на предыдущей форме
             InitializeComponent();
         }
     }
