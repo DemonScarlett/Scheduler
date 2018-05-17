@@ -43,7 +43,7 @@
             // 
             this.DateLable.AutoSize = true;
             this.DateLable.Font = new System.Drawing.Font("Segoe Print", 19F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateLable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(249)))), ((int)(((byte)(154)))));
+            this.DateLable.ForeColor = System.Drawing.Color.White;
             this.DateLable.Location = new System.Drawing.Point(13, 86);
             this.DateLable.Name = "DateLable";
             this.DateLable.Size = new System.Drawing.Size(156, 46);
@@ -55,7 +55,7 @@
             // 
             this.TimeLable.AutoSize = true;
             this.TimeLable.Font = new System.Drawing.Font("Segoe Print", 19F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimeLable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(249)))), ((int)(((byte)(154)))));
+            this.TimeLable.ForeColor = System.Drawing.Color.White;
             this.TimeLable.Location = new System.Drawing.Point(32, 121);
             this.TimeLable.Name = "TimeLable";
             this.TimeLable.Size = new System.Drawing.Size(104, 46);
@@ -67,7 +67,7 @@
             // 
             this.NameLable.AutoSize = true;
             this.NameLable.Font = new System.Drawing.Font("Segoe Print", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameLable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(250)))), ((int)(((byte)(100)))));
+            this.NameLable.ForeColor = System.Drawing.Color.White;
             this.NameLable.Location = new System.Drawing.Point(96, 39);
             this.NameLable.Name = "NameLable";
             this.NameLable.Size = new System.Drawing.Size(213, 47);
@@ -143,7 +143,7 @@
             this.CommentTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(99)))), ((int)(((byte)(229)))));
             this.CommentTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CommentTextBox.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CommentTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(249)))), ((int)(((byte)(154)))));
+            this.CommentTextBox.ForeColor = System.Drawing.Color.White;
             this.CommentTextBox.Location = new System.Drawing.Point(190, 86);
             this.CommentTextBox.Multiline = true;
             this.CommentTextBox.Name = "CommentTextBox";
