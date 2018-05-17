@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Scheduler.Forms"
         mc:Ignorable="d"
-        Title="AddNotificationWindow" Height="478.985" Width="687.233" Background="#FFB563E5" FontFamily="Segoe Print" FontSize="15">
-    <Grid Margin="0,0,2,0">
+        Title="AddNotificationWindow" Height="371.842" Width="779.714" Background="#FFB563E5" FontFamily="Segoe Print" FontSize="15" Loaded="AddNotificationWindowDesign_Loaded">
+    <Grid Margin="0,0,2,1">
         <Grid.RowDefinitions>
             <RowDefinition Height="195*"/>
             <RowDefinition Height="193*"/>
@@ -25,10 +25,10 @@
                 </LinearGradientBrush>
             </Calendar.BorderBrush>
         </Calendar>
-        <Label Content="в" HorizontalAlignment="Left" Margin="308,149,0,0" VerticalAlignment="Top" Foreground="#FFF9F2FD"/>
-        <TextBox x:Name="TimeTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="10,149,0,0" TextWrapping="Wrap" Text="18:10" VerticalAlignment="Top" Width="59"/>
-        <Label Content="Мелодия:" HorizontalAlignment="Left" Margin="74,125,0,0" VerticalAlignment="Top" Foreground="#FFF9F2FD" Grid.Row="1" Grid.Column="1"/>
-        <ComboBox HorizontalAlignment="Left" Height="34" Margin="159,149,0,0" Grid.Row="1" VerticalAlignment="Top" Width="171" Grid.Column="1">
+        <Label Content="в" HorizontalAlignment="Left" Margin="296,151,0,0" VerticalAlignment="Top" Foreground="#FFF9F2FD" Grid.RowSpan="2"/>
+        <TextBox x:Name="TimeTextBox" HorizontalAlignment="Left" Height="31" Margin="328,151,0,0" TextWrapping="Wrap" Text="18:10" VerticalAlignment="Top" Width="59" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Label Content="Мелодия:" HorizontalAlignment="Left" Margin="117,86,0,0" VerticalAlignment="Top" Foreground="#FFF9F2FD" Grid.Column="1"/>
+        <ComboBox HorizontalAlignment="Left" Height="34" Margin="202,110,0,0" VerticalAlignment="Top" Width="171" Grid.Column="1">
             <ComboBox.Background>
                 <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                     <GradientStop Color="#FFF3F3F3" Offset="0"/>
@@ -38,8 +38,8 @@
                 </LinearGradientBrush>
             </ComboBox.Background>
         </ComboBox>
-        <Label Content="Частота напоминаний:" HorizontalAlignment="Left" Margin="291,45,0,0" VerticalAlignment="Top" Foreground="#FFF9F2FD" Grid.Row="1" Grid.ColumnSpan="2"/>
-        <ComboBox HorizontalAlignment="Left" Height="34" Margin="159,69,0,0" Grid.Row="1" VerticalAlignment="Top" Width="171" Grid.Column="1">
+        <Label Content="Частота напоминаний:" HorizontalAlignment="Left" Margin="2,10,0,0" VerticalAlignment="Top" Foreground="#FFF9F2FD" Grid.Column="1"/>
+        <ComboBox HorizontalAlignment="Left" Height="34" Margin="202,46,0,0" VerticalAlignment="Top" Width="171" Grid.Column="1">
             <ComboBox.Background>
                 <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                     <GradientStop Color="#FFF3F3F3" Offset="0"/>
@@ -49,6 +49,7 @@
                 </LinearGradientBrush>
             </ComboBox.Background>
         </ComboBox>
+        <Button x:Name="OkButton" Content="OK" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="102" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="15" Margin="333,107,0,0" Grid.Row="1" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

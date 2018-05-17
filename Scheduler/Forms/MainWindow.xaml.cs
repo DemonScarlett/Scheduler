@@ -75,10 +75,10 @@ namespace Scheduler
         {
 
         }
-
+        //temp
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            AddNotificationWindow form = new AddNotificationWindow();
+            AddNotificationWindow form = new AddNotificationWindow(DateTime.Now);
             form.ShowDialog();
         }
     }

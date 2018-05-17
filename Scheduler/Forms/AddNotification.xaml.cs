@@ -19,11 +19,20 @@ namespace Scheduler.Forms
     /// </summary>
     public partial class AddNotificationWindow : Window
     {
-        public AddNotificationWindow()
+        private DateTime _taskDateTime;
+        public AddNotificationWindow(DateTime taskDateTime)
         {
             //todo add sounds to notif
-            //todo поставить дату и время по умолчанию такими же, как на предыдущей форме
+           
             InitializeComponent();
+
+            _taskDateTime = taskDateTime;
+        }
+
+        private void AddNotificationWindowDesign_Loaded(object sender, RoutedEventArgs e)
+        {
+            NotificationCalendar.SelectedDate = _taskDateTime.Date;
+            TimeTextBox.Text = _taskDateTime.ToShortTimeString();
         }
     }
 }
