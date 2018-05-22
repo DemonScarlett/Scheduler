@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,6 +25,13 @@ namespace Scheduler.Forms
         public AddTask()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {                                 
+            //temp
+            AddNotificationWindow form = new AddNotificationWindow(DateTime.Now);
+            form.ShowDialog();
         }
     }
 }

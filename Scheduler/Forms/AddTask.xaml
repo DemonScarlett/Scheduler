@@ -25,7 +25,7 @@
             </Grid.ColumnDefinitions>
             
             <TextBlock Grid.Row="0" Grid.ColumnSpan="2"
-                       Text="Расписание задачи"
+                       Text="Описание задачи"
                        Foreground="#E4C0FA"                        
                        FontSize="24"
                        HorizontalAlignment="Center"
@@ -61,7 +61,7 @@
                      />
 
             <TextBlock Grid.Row="3" Grid.Column="0"
-                       Text="Важность" 
+                       Text="Приоритет" 
                        Foreground="#dedede" 
                        Margin="25,10,0,0"
                        FontSize="12"/>
@@ -134,7 +134,7 @@
             />
 
             <Button Content="Готово" Grid.Column="1" HorizontalAlignment="Center" Height="47" VerticalAlignment="Center" Width="200" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="15" Grid.Row="7"/>
-            <Button Content="Добавить уведомление" Grid.Column="0" HorizontalAlignment="Center" Height="47" VerticalAlignment="Center" Width="200" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="15" Grid.Row="7"/>
+            <Button Content="Добавить уведомление" Grid.Column="0" HorizontalAlignment="Center" Height="47" VerticalAlignment="Center" Width="200" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="15" Grid.Row="7" Click="Button_Click"/>
         </Grid>
     </DockPanel>
 </Window>

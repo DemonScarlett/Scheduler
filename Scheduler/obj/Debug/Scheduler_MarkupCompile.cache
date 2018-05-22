@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\C#_Projects\Scheduler\Repo\Scheduler\App.xaml
-4-1491609569
+131797504661
 
 11-1103501877
 131569487696
-Forms\AddNotification.xaml;Forms\AddTask.xaml;Forms\GroupsWindow.xaml;Forms\MainWindow.xaml;
+Forms\AddNotification.xaml;Forms\AddTask.xaml;Forms\GroupsWindow.xaml;Forms\MainWindow.xaml;Styles\Button\ButtonStyle.xaml;Styles\DataGrid\DataGridCellStyle.xaml;Styles\DataGrid\DataGridColumnHeaderStyle.xaml;Styles\DataGrid\DataGridRowStyle.xaml;Styles\DataGrid\DataGridViewStyle.xaml;Styles\GlobalTheme.xaml;Styles\Label\LabelStyle.xaml;Styles\ListView\ListViewStyle.xaml;Styles\TextBox\TextBoxStyle.xaml;
 
 False
 

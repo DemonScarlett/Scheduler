@@ -28,6 +28,10 @@ namespace Scheduler
         //todo Error: priority - not show, comment - empty show, status - I don`t know what do with it, delete - in process...
         public MainWindow()
         {
+
+            
+
+
             InitializeComponent();
             _dataForNotifications = new List<DataForNotification>();
             _todayTasks = new List<TasksViewModel>();
