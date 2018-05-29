@@ -5,7 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Scheduler.Forms"
         mc:Ignorable="d"
-        Title="AddTask" Height="400" Width="600" Background="#FFB563E5">
+        Title="AddTask" Height="400" Width="600" Background="{StaticResource WindowBackgroundBrush}" FontFamily="Segoe Print" FontSize="15" Closing="AddTaskForm_Closing">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/GlobalTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <DockPanel>
         <Grid>
             <Grid.RowDefinitions>
@@ -23,7 +30,7 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            
+
             <TextBlock Grid.Row="0" Grid.ColumnSpan="2"
                        Text="Описание задачи"
                        Foreground="#E4C0FA"                        
@@ -45,19 +52,18 @@
                     Background="#E4C0FA"
                     VerticalAlignment="Bottom"
                     Margin="0,50,0,0"/>
-            
+
             <TextBlock Grid.Row="1" Grid.Column="0"
                        Text="Название" 
                        Foreground="#E4C0FA" 
                        Margin="25,25,0,0"
                        FontSize="12"/>
-            <TextBox Grid.Row="2" Grid.Column="0"
-                     Margin="25,0,25,0"                      
-                     Height="30"
-                     Padding="4"
-                     Text="asdasd"
-                     FontSize="16"
-                     Style="{StaticResource LineTextBoxStyle}"
+            <TextBox Grid.Row="1" Grid.Column="0"
+                     Margin="25,40,25,0"
+                     Padding="1"
+                     FontSize="15"  
+                     Name="NameTextBox"
+                     Style="{StaticResource LineTextBoxStyle}" Grid.RowSpan="2"
                      />
 
             <TextBlock Grid.Row="3" Grid.Column="0"
@@ -67,7 +73,8 @@
                        FontSize="12"/>
             <ComboBox Grid.Row="4"  
                          Grid.Column="0"
-                         Margin="25,0,25,0"                                           
+                         Margin="25,0,25,0"   
+                         Name ="PriorityComboBox"
                          Height="30"
                          Padding="4"
                          FontSize="16" SelectedIndex="0"
@@ -98,6 +105,7 @@
                         Height="30"
                         Padding="4"                       
                         FontSize="16"
+                        Name ="NotificationDatePicker"
                         BorderThickness="0"
                         BorderBrush="Transparent"
                        Style="{StaticResource DatePicStyle}"/>
@@ -109,10 +117,11 @@
                        FontSize="12"/>
             <TextBox Grid.Row="4"  
                          Grid.Column="1"
-                         Margin="25,0,25,0"                                           
+                         Margin="25,0,25,0"   
                          Height="30"
+                     Name ="TimeTextBox"
                      VerticalAlignment="Top"
-                         Padding="4"
+                         Padding="1"
                          FontSize="16"
                          Style="{StaticResource LineTextBoxStyle}"
                      
@@ -126,15 +135,16 @@
                        FontSize="12"/>
             <RichTextBox Grid.Row="6"  
                          Grid.ColumnSpan="2" Grid.Column="0"
-                         Margin="25,0,25,0"                                           
+                         Margin="26,0,24,0"                                           
                          Height="30"
-                         Padding="4"
+                         Padding="1"
+                         Name ="CommentTextBox"
                          FontSize="16"
                          Style="{StaticResource LineRichTextBoxStyle}"
             />
 
-            <Button Content="Готово" Grid.Column="1" HorizontalAlignment="Center" Height="47" VerticalAlignment="Center" Width="200" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="15" Grid.Row="7"/>
-            <Button Content="Добавить уведомление" Grid.Column="0" HorizontalAlignment="Center" Height="47" VerticalAlignment="Center" Width="200" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="15" Grid.Row="7" Click="Button_Click"/>
+            <Button Content="Готово" Name="DoneButton" Grid.Column="1" HorizontalAlignment="Center" Height="47" VerticalAlignment="Center" Width="200" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="15" Grid.Row="7" Click="DoneButton_Click"/>
+            <Button Content="Добавить уведомление" Name="AddNotificationButton" Grid.Column="0" HorizontalAlignment="Center" Height="47" VerticalAlignment="Center" Width="200" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="15" Grid.Row="7" Click="AddNotificationButton_Click"/>
         </Grid>
     </DockPanel>
 </Window>

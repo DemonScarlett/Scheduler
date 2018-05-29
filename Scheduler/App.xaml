@@ -18,12 +18,18 @@
         <Color x:Key="ButtonDisabledBackgroundColor" >#D8A6F5</Color>
 
         <!-- ListViewColors -->
+        <SolidColorBrush x:Key="ScrollViewBrush" Color="#DDF5AB"/>
         <Color x:Key="ListViewItemSelectedColor">#7A6BB1</Color>
         <Color x:Key="ListViewItemSelectedUnfocusedColor">#594897</Color>
         <Color x:Key="GridViewColumnHoverColor">#A498D0</Color>
-        <Color x:Key="ScrollBarMouseHover"></Color>
+        <Color x:Key="ScrollBarMouseHover">#DDF5AB</Color>
+        <Color x:Key="ThumbBackgroundColor">#A6CD54</Color>
 
-        <!-- TextBoxColors -->
+            <!-- TextBoxColors -->
+
+        <!-- WindowColor -->
+        <SolidColorBrush x:Key="WindowBackgroundBrush" Color="{StaticResource MainColor}"/>
+
 
         <SolidColorBrush x:Key="DataGridBackground">#ECEFF1</SolidColorBrush>
        
@@ -36,24 +42,6 @@
         </Style>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         
-        
-        
-        <Style x:Key="LineTextBoxStyle" TargetType="{x:Type TextBox}">
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderBrush" Value="#E4C0FA"/>
-            <Setter Property="BorderThickness" Value="0,0,0,1"/>
-            <Setter Property="Foreground" Value="#dedede"></Setter>
-        </Style>
-
-        <Style x:Key="LineRichTextBoxStyle" TargetType="{x:Type RichTextBox}">
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderBrush" Value="#E4C0FA"/>
-            <Setter Property="BorderThickness" Value="0,0,0,1"/>
-            <Setter Property="Foreground" Value="#dedede"></Setter>
-        </Style>
-
-
-
         <Style x:Key="DatePickerCalendarStyle" TargetType="{x:Type Calendar}" BasedOn="{StaticResource {x:Type Calendar}}" />
         
         <Style x:Key="DropDownButtonStyle" TargetType="Button">
@@ -83,14 +71,16 @@
                                                 Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[2].(GradientStop.Color)">
                                                 <SplineColorKeyFrame KeyTime="0" Value="#CCFFFFFF" />
                                             </ColorAnimationUsingKeyFrames>
-                                            <ColorAnimation Duration="0" To="#FF448DCA" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Background" />
+                                            <ColorAnimation Duration="0" To="#FF448DCA" Storyboard.TargetProperty="(Border.Background).
+                                                                                                                    (SolidColorBrush.Color)" 
+                                                                                        Storyboard.TargetName="Background" />
                                             <ColorAnimationUsingKeyFrames BeginTime="0"
                                                 Duration="00:00:00.001"
                                                 Storyboard.TargetName="BackgroundGradient"
                                                 Storyboard.TargetProperty="(Border.Background).
-                    (GradientBrush.GradientStops)[3].(GradientStop.Color)">
+                                                                           (GradientBrush.GradientStops)[3].(GradientStop.Color)">
                                                 <SplineColorKeyFrame KeyTime="0"
-                                         Value="#7FFFFFFF" />
+                                                                     Value="#7FFFFFFF" />
                                             </ColorAnimationUsingKeyFrames>
                                         </Storyboard>
                                     </VisualState>
@@ -100,24 +90,25 @@
                                                 Duration="00:00:00.001"
                                                 Storyboard.TargetName="Background"
                                                 Storyboard.TargetProperty="(Border.Background).
-                      (SolidColorBrush.Color)">
+                                                                           (SolidColorBrush.Color)">
                                                 <SplineColorKeyFrame KeyTime="0"
-                                         Value="#FF448DCA" />
+                                                                     Value="#FF448DCA" />
                                             </ColorAnimationUsingKeyFrames>
                                             <DoubleAnimationUsingKeyFrames BeginTime="0"
-                                                 Duration="00:00:00.001"
-                                                 Storyboard.TargetProperty="(UIElement.Opacity)"
-                                                 Storyboard.TargetName="Highlight">
+                                                                           Duration="00:00:00.001"
+                                                                           Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                                           Storyboard.TargetName="Highlight">
                                                 <SplineDoubleKeyFrame KeyTime="0"
-                                          Value="1" />
+                                                                      Value="1" />
                                             </DoubleAnimationUsingKeyFrames>
                                             <ColorAnimationUsingKeyFrames BeginTime="0"
                                                 Duration="00:00:00.001"
                                                 Storyboard.TargetName="BackgroundGradient"
                                                 Storyboard.TargetProperty="(Border.Background).
-                    (GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                                                                           (GradientBrush.GradientStops)[0].
+                                                                           (GradientStop.Color)">
                                                 <SplineColorKeyFrame KeyTime="0"
-                                         Value="#F4FFFFFF" />
+                                                                     Value="#F4FFFFFF" />
                                             </ColorAnimationUsingKeyFrames>
                                             <ColorAnimationUsingKeyFrames BeginTime="0"
                                                 Duration="00:00:00.001"
@@ -306,7 +297,7 @@
                     Value="Stretch" />
             
             <Setter Property="CalendarStyle"
-          Value="{DynamicResource DatePickerCalendarStyle}" />
+                    Value="{DynamicResource DatePickerCalendarStyle}" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type DatePicker}">
@@ -360,7 +351,6 @@
                                                    HorizontalContentAlignment="Stretch"
                                                    Grid.Row="0"
                                                    VerticalContentAlignment="Stretch"
-                                                   
                                                    >
                                     <DatePickerTextBox.Style>
                                         <Style TargetType="DatePickerTextBox">
@@ -419,21 +409,12 @@
                                     </DatePickerTextBox.Style>
 
                                 </DatePickerTextBox>
-
-
-
-
-
-
-
-
                                 <Grid x:Name="PART_DisabledVisual"
-                  Grid.ColumnSpan="2"
-                  Grid.Column="0"
-                  IsHitTestVisible="False"
-                                      
-                  Opacity="0"
-                  Grid.Row="0">
+                                      Grid.ColumnSpan="2"
+                                      Grid.Column="0"
+                                      IsHitTestVisible="False"                      
+                                      Opacity="0"
+                                      Grid.Row="0">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="Auto" />

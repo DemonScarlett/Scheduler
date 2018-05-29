@@ -13,7 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Scheduler.Forms;
+using Scheduler.Helper;
 using Scheduler.Models;
+using Scheduler.Security;
+using Scheduler.Service;
 
 namespace Scheduler
 {
@@ -24,20 +27,22 @@ namespace Scheduler
     {
         private List<DataForNotification> _dataForNotifications;
         private List<TasksViewModel> _todayTasks;
+        // todo return private ServiceController serviceController;
+        private DataEncryption encryption;
+
 
         //todo Error: priority - not show, comment - empty show, status - I don`t know what do with it, delete - in process...
         public MainWindow()
         {
-
             
-
-
             InitializeComponent();
             _dataForNotifications = new List<DataForNotification>();
             _todayTasks = new List<TasksViewModel>();
+            // todo return serviceController = new ServiceController();
+            encryption = new DataEncryption();
 
             //smth temp
-            TasksViewModel taskTemp = new TasksViewModel();
+           /* TasksViewModel taskTemp = new TasksViewModel();
             taskTemp.Time = "14:10";
             taskTemp.Group = "По дому";
             taskTemp.Name = "Полить цветы";
@@ -69,7 +74,7 @@ namespace Scheduler
                 TasksListView.Items.Add(_todayTasks[i]);
             }
                
-            //end
+            //end*/
 
             //todo anchors
 
@@ -77,13 +82,52 @@ namespace Scheduler
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-        //temp
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            AddNotificationWindow form = new AddNotificationWindow(DateTime.Now);
+            this.Close();
+            AddTask form = new AddTask(/*serviceController*/);
             form.ShowDialog();
+            
+        }
+     
+
+        private void GroupButton_Click(object sender, RoutedEventArgs e)
+        {
+            GroupsWindow form = new GroupsWindow();
+            form.Show();
+            this.Close();
+        }
+
+        private void CalendarButton_Click(object sender, RoutedEventArgs e)
+        {
+           /* CalendarWindow form = new CalendarWindow();
+            form.Show();
+            this.Close();*/
+        }
+
+        private void SettingButton_Click(object sender, RoutedEventArgs e)
+        {
+            /* SettingWindow form = new SettingWindow();
+            form.Show();
+            this.Close();*/
+        }
+
+     
+        private void TasksListView_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            ListViewItem item = TasksListView.SelectedItem as ListViewItem;
+        }
+
+        private void MainWindowFormGrid_Loaded(object sender, RoutedEventArgs e)
+        {
+            _dataForNotifications = encryption.ReadFileEncrypted(DataEncryption.TaskType.Task);
+            foreach (var data in _dataForNotifications)
+            {
+                _todayTasks.Add(DataForNotificationConverter.ConvertToDisplay(data));
+            }
+            
+            for (int i = 0; i < _todayTasks.Count; i++)
+            {
+                TasksListView.Items.Add(_todayTasks[i]);
+            }
         }
     }
 }

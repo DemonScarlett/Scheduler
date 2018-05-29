@@ -34,8 +34,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DataForNotification">
+      <HintPath>..\DataForNotification\bin\Debug\DataForNotification.dll</HintPath>
+    </Reference>
+    <Reference Include="Scheduler.DataContract">
+      <HintPath>..\Scheduler.DataContract\bin\Debug\Scheduler.DataContract.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -63,8 +70,13 @@
     <Compile Include="Forms\GroupsWindow.xaml.cs">
       <DependentUpon>GroupsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helper\DataForNotificationConverter.cs" />
     <Compile Include="Models\TasksViewModel.cs" />
     <Compile Include="Security\DataEncryption.cs" />
+    <Compile Include="Service\ServiceController.cs" />
+    <Compile Include="UserControls\PopupPanelControl.xaml.cs">
+      <DependentUpon>PopupPanelControl.xaml</DependentUpon>
+    </Compile>
     <Page Include="Forms\AddNotification.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -125,9 +137,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\PopupPanelControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\DataForNotification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -154,8 +169,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image1.png" />
+    <Resource Include="Resources\plansIcon.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\birthDateIcon.png" />
+    <Resource Include="Resources\restIcon.png" />
+    <Resource Include="Resources\shoppingListIcon.png" />
+    <Resource Include="Resources\WorkPlanningIcon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -11,24 +11,43 @@ namespace Scheduler.Security
 {
     public class DataEncryption
     {
-        private string fileName = Environment.CurrentDirectory + @"\notificationData.ntfd";
-        public void WriteToFileEnrypted(DataForNotification dataForNotification)
+        private string NotificationfileName = Environment.CurrentDirectory + @"\notificationData.ntfd";
+        private string TaskfileName = Environment.CurrentDirectory + @"\taskData.ntfd";
+
+        public enum TaskType
         {
+            Notification,
+            Task
+        };
+
+ 
+        public void WriteToFileEnrypted(DataForNotification dataForNotification, TaskType taskType)
+        {
+            string fileName;
+
+            fileName = taskType == TaskType.Notification ? NotificationfileName : TaskfileName;
+
             FileStream stream = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Write);
 
             DESCryptoServiceProvider cryptic = new DESCryptoServiceProvider();
 
-            cryptic.Key = ASCIIEncoding.ASCII.GetBytes("0205201800058");
-            cryptic.IV = ASCIIEncoding.ASCII.GetBytes("020520180");
+            cryptic.Key = ASCIIEncoding.ASCII.GetBytes("02052018");
+            cryptic.IV = ASCIIEncoding.ASCII.GetBytes("02052018");
 
             CryptoStream crStream = new CryptoStream(stream,
                 cryptic.CreateEncryptor(), CryptoStreamMode.Write);
 
             byte[] data = ASCIIEncoding.ASCII.GetBytes(dataForNotification.Name + "/"
-                                                        + dataForNotification.DateAndTime + "/" 
-                                                        + dataForNotification.Comment + "/"
-                                                        + dataForNotification.Group + "/" 
-                                                        + dataForNotification.Priority);
+                                                                                + dataForNotification.DateAndTime + "/"
+                                                                                + dataForNotification.Comment + "/"
+                                                                                + dataForNotification.Group + "/"
+                                                                                + dataForNotification.Priority
+                                                                                + dataForNotification
+                                                                                    .DateandTimeOfNotification + "/"
+                                                                                + dataForNotification.Status
+                                                                                + dataForNotification.IsNotification + "/"
+                                                                                + dataForNotification.Sound);
+                                                                                
 
             crStream.Write(data, 0, data.Length);
 
@@ -36,17 +55,21 @@ namespace Scheduler.Security
             stream.Close();
         }
 
-        public List<DataForNotification> ReadFileEncrypted()
+        public List<DataForNotification> ReadFileEncrypted(TaskType taskType)
         {
             List<DataForNotification> result = new List<DataForNotification>();
+
+            string fileName;
+
+            fileName = taskType == TaskType.Notification ? NotificationfileName : TaskfileName;
 
             FileStream stream = new FileStream(fileName,
                 FileMode.Open, FileAccess.Read);
 
             DESCryptoServiceProvider cryptic = new DESCryptoServiceProvider();
 
-            cryptic.Key = ASCIIEncoding.ASCII.GetBytes("0205201800058");
-            cryptic.IV = ASCIIEncoding.ASCII.GetBytes("020520180");
+            cryptic.Key = ASCIIEncoding.ASCII.GetBytes("02052018");
+            cryptic.IV = ASCIIEncoding.ASCII.GetBytes("02052018");
 
             CryptoStream crStream = new CryptoStream(stream,
                 cryptic.CreateDecryptor(), CryptoStreamMode.Read);
@@ -66,6 +89,10 @@ namespace Scheduler.Security
                 dataFromArray.Comment = array[2];
                 dataFromArray.Group = array[3];
                 dataFromArray.Priority = Byte.Parse(array[4]);
+                dataFromArray.DateandTimeOfNotification = DateTime.Parse(array[5]);
+                dataFromArray.Status = Boolean.Parse(array[6]);
+                dataFromArray.IsNotification = Boolean.Parse(array[7]);
+                dataFromArray.Sound = array[8];
 
                 result.Add(dataFromArray);
             }

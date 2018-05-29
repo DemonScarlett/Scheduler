@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" 
         Height="600" 
-        Width="1121.052" Background="#FFB563E5" WindowStartupLocation="CenterScreen">
+        Width="1121.052" Background="{StaticResource WindowBackgroundBrush}" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -20,7 +20,7 @@
     </Window.ContextMenu>
 
     <DockPanel LastChildFill="True">
-        <Grid x:Name="MainWindowFormGrid" Background="#FFB563E5">
+        <Grid x:Name="MainWindowFormGrid" Background="#FFB563E5" Loaded="MainWindowFormGrid_Loaded">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
@@ -29,9 +29,8 @@
                 <ColumnDefinition Width="18*"/>
                 <ColumnDefinition Width="11*"/>
             </Grid.ColumnDefinitions>
-            
+
             <ListView x:Name="TasksListView" 
-                      Style="{StaticResource ListViewStyle}"
                       HorizontalAlignment="Stretch" 
                       VerticalAlignment="Stretch"
                       Background="#FF9163AC" 
@@ -41,7 +40,7 @@
                       FontFamily="Segoe Print" 
                       FontSize="16"
                       Grid.Row="0"
-                      Grid.Column="0">
+                      Grid.Column="0"  PreviewMouseLeftButtonDown="TasksListView_PreviewMouseLeftButtonDown">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="{x:Type ListViewItem}">
                         <Setter Property="ToolTip">
@@ -76,9 +75,9 @@
                 </Grid.RowDefinitions>
 
                 <Button x:Name="AddButton" Style ="{StaticResource ButtonStyle}" Content="Добавить" HorizontalAlignment="Left" Height="92" Margin="24,29,0,0" VerticalAlignment="Top" Width="377" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="18" Click="AddButton_Click"/>
-                <Button x:Name="GroupButton" Style ="{StaticResource ButtonStyle}" Content="Группы" HorizontalAlignment="Left" Height="67" Margin="150,6,0,0" VerticalAlignment="Top" Width="251" Background="#FFC07AEA" BorderBrush="#FFD8A6F5" FontFamily="Segoe Print" FontSize="18" Grid.Row="1"/>
-                <Button x:Name="SettingButton" Style ="{StaticResource ButtonStyle}" Content="Настройки"  HorizontalAlignment="Left" Height="67" Margin="150,7,0,0" VerticalAlignment="Top" Width="251" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="18" Grid.Row="3"/>
-                <Button x:Name="CalendarButton" Style ="{StaticResource ButtonStyle}" Content="Календарь" HorizontalAlignment="Left" Height="67" Margin="150,6,0,0" VerticalAlignment="Top" Width="251" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="18" Grid.Row="2"/>
+                <Button x:Name="GroupButton" Style ="{StaticResource ButtonStyle}" Content="Группы" HorizontalAlignment="Left" Height="67" Margin="150,6,0,0" VerticalAlignment="Top" Width="251" Background="#FFC07AEA" BorderBrush="#FFD8A6F5" FontFamily="Segoe Print" FontSize="18" Grid.Row="1" Click="GroupButton_Click"/>
+                <Button x:Name="SettingButton" Style ="{StaticResource ButtonStyle}" Content="Настройки"  HorizontalAlignment="Left" Height="67" Margin="150,7,0,0" VerticalAlignment="Top" Width="251" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="18" Grid.Row="3" Click="SettingButton_Click"/>
+                <Button x:Name="CalendarButton" Style ="{StaticResource ButtonStyle}" Content="Календарь" HorizontalAlignment="Left" Height="67" Margin="150,6,0,0" VerticalAlignment="Top" Width="251" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="18" Grid.Row="2" Click="CalendarButton_Click"/>
                                 
             </Grid>
         </Grid>

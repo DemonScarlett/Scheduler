@@ -32,9 +32,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DataForNotification">
+      <HintPath>..\DataForNotification\bin\Debug\DataForNotification.dll</HintPath>
+    </Reference>
+    <Reference Include="Scheduler.DataContract">
+      <HintPath>..\Scheduler.DataContract\bin\Debug\Scheduler.DataContract.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,7 +55,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataEncryption.cs" />
-    <Compile Include="DataForNotification.cs" />
     <Compile Include="DataForNotificationComparer.cs" />
     <Compile Include="MainInstruction.cs">
       <SubType>Component</SubType>
@@ -54,21 +62,21 @@
     <Compile Include="MainInstruction.Designer.cs">
       <DependentUpon>MainInstruction.cs</DependentUpon>
     </Compile>
-    <Compile Include="NotificationForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NotificationForm.Designer.cs">
-      <DependentUpon>NotificationForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SchedulerServiceInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SchedulerServiceInstaller.Designer.cs">
+      <DependentUpon>SchedulerServiceInstaller.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="NotificationForm.resx">
-      <DependentUpon>NotificationForm.cs</DependentUpon>
+    <EmbeddedResource Include="MainInstruction.resx">
+      <DependentUpon>MainInstruction.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

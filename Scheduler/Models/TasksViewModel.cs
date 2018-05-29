@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace Scheduler.Models
 {
-    class TasksViewModel
+    //display task
+    public class TasksViewModel 
     {
+        public string Date { get; set; }
         public string Time { get; set; }
         public string Group { get; set; }
         public string Name { get; set; }

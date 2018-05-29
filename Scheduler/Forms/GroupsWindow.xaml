@@ -5,12 +5,79 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Scheduler.Forms"
         mc:Ignorable="d"
-        Title="GroupsWindow" Height="360.902" Width="1241.729">
+        Title="GroupsWindow" Height="579" Width="1100" Background="{StaticResource WindowBackgroundBrush}" FontFamily="Segoe Print" FontSize="15">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/GlobalTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="248"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="277*"/>
+            <RowDefinition Height="272*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300*"/>
+                <ColumnDefinition Width="300*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Button Name="PlansButton" Margin="30"  
+                    Style="{StaticResource ButtonStyle}"
+                    Padding="30"
+                    BorderBrush="{StaticResource ButtonBackgroundBrush}"
+                    ToolTip="Планы">
+                <StackPanel>
+                    <Image Source="..\Resources\plansIcon.png" Stretch="Uniform" Height="188" Width="230" />
+                </StackPanel>
+                </Button>
+            <Button Name="WorkButton" Style="{StaticResource ButtonStyle}"
+                    Margin="30"
+                    Grid.Column="1"
+                    ToolTip="Работа">
+                <StackPanel>
+                    <Image Source="..\Resources\WorkPlanningIcon.png" Stretch="Uniform" Height="188" Width="174" />
+                </StackPanel>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200*"/>
+                <ColumnDefinition Width="200*"/>
+                <ColumnDefinition Width="200*"/>
+            </Grid.ColumnDefinitions>
+           
+            <Button Name="ShopListButton" Style="{StaticResource ButtonStyle}"
+                    Margin="30"
+                    ToolTip="Список покупок">
+                <StackPanel>
+                    <Image Source="..\Resources\shoppingListIcon.png" Stretch="Uniform" Height="188" Width="174" />
+                </StackPanel>
+            </Button>
+            <Button Name="HolidayButton" Margin="30"  
+                    Style="{StaticResource ButtonStyle}"
+                    Padding="30"
+                    BorderBrush="{StaticResource ButtonBackgroundBrush}"
+                    Grid.Column="1"
+                    ToolTip="Праздники">
+                <StackPanel>
+                    <Image Source="..\Resources\birthDateIcon.png" Stretch="Uniform" Height="188" Width="230" />
+                </StackPanel>
+            </Button>
+            <Button Name="RestButton" Margin="30"  
+                    Style="{StaticResource ButtonStyle}"
+                    Padding="30"
+                    BorderBrush="{StaticResource ButtonBackgroundBrush}"
+                    Grid.Column="2"
+                    ToolTip="Планирование отдыха">
+                <StackPanel>
+                    <Image Source="..\Resources\restIcon.png" Stretch="Uniform" Height="188" Width="230" />
+                </StackPanel>
+            </Button>
+        </Grid>
 
     </Grid>
 </Window>

@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Scheduler.Models;
+using Scheduler.Service;
 
 namespace Scheduler.Forms
 {
@@ -19,20 +21,29 @@ namespace Scheduler.Forms
     /// </summary>
     public partial class AddNotificationWindow : Window
     {
-        private DateTime _taskDateTime;
-        public AddNotificationWindow(DateTime taskDateTime)
+ 
+        private ServiceController _serviceController;
+        private DataForNotification _data;
+        
+        public AddNotificationWindow(ServiceController serviceController, DataForNotification data)
         {
             //todo add sounds to notif
-           
-            InitializeComponent();
 
-            _taskDateTime = taskDateTime;
+            InitializeComponent();
+            _data = data;
+            _serviceController = serviceController;
+    
         }
 
         private void AddNotificationWindowDesign_Loaded(object sender, RoutedEventArgs e)
         {
-            NotificationCalendar.SelectedDate = _taskDateTime.Date;
-            TimeTextBox.Text = _taskDateTime.ToShortTimeString();
+            NotificationCalendar.SelectedDate = _data.DateAndTime.Date;
+            TimeTextBox.Text = _data.DateAndTime.ToShortTimeString();            
+        }
+
+        private void OkButton_Click(object sender, RoutedEventArgs e)
+        {
+            _serviceController.ServiceContract.AddTask(_data);
         }
     }
 }

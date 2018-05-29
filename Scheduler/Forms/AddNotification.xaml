@@ -5,7 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Scheduler.Forms"
         mc:Ignorable="d"
-        Title="AddNotificationWindow" Height="371.842" Width="779.714" Background="#FFB563E5" FontFamily="Segoe Print" FontSize="15" Loaded="AddNotificationWindowDesign_Loaded">
+        Title="AddNotificationWindow" Height="371.842" Width="779.714" Background="{StaticResource WindowBackgroundBrush}" FontFamily="Segoe Print" FontSize="15" Loaded="AddNotificationWindowDesign_Loaded">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/GlobalTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid Margin="0,0,2,1">
         <Grid.RowDefinitions>
             <RowDefinition Height="195*"/>
@@ -26,7 +33,7 @@
             </Calendar.BorderBrush>
         </Calendar>
         <Label Content="в" HorizontalAlignment="Left" Margin="296,151,0,0" VerticalAlignment="Top" Foreground="#FFF9F2FD" Grid.RowSpan="2"/>
-        <TextBox x:Name="TimeTextBox" HorizontalAlignment="Left" Height="31" Margin="328,151,0,0" TextWrapping="Wrap" Text="18:10" VerticalAlignment="Top" Width="59" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <TextBox x:Name="TimeTextBox" Style="{StaticResource LineTextBoxStyle}" HorizontalAlignment="Left" Height="31" Margin="328,151,0,0" TextWrapping="Wrap" Text="18:10" VerticalAlignment="Top" Width="59" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
         <Label Content="Мелодия:" HorizontalAlignment="Left" Margin="117,86,0,0" VerticalAlignment="Top" Foreground="#FFF9F2FD" Grid.Column="1"/>
         <ComboBox HorizontalAlignment="Left" Height="34" Margin="202,110,0,0" VerticalAlignment="Top" Width="171" Grid.Column="1">
             <ComboBox.Background>
@@ -49,7 +56,7 @@
                 </LinearGradientBrush>
             </ComboBox.Background>
         </ComboBox>
-        <Button x:Name="OkButton" Content="OK" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="102" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="15" Margin="333,107,0,0" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <Button x:Name="OkButton" Style="{StaticResource ButtonStyle}" Content="OK" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="102" Background="#FFC07AEA" BorderBrush="#FFC07AEA" FontFamily="Segoe Print" FontSize="15" Margin="333,107,0,0" Grid.Row="1" Grid.ColumnSpan="2" Click="OkButton_Click"/>
 
     </Grid>
 </Window>

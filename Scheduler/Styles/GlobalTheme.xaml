@@ -8,5 +8,6 @@
 
         <ResourceDictionary Source="Button/ButtonStyle.xaml"/>
         <ResourceDictionary Source="ListView/ListViewStyle.xaml"/>
+        <ResourceDictionary Source="TextBox/TextBoxStyle.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

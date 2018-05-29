@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Scheduler.Models;
+
 
 namespace Notification
 {
@@ -11,13 +9,19 @@ namespace Notification
     {
         public bool Equals(DataForNotification x, DataForNotification y)
         {
-            var xAsDateAndHours = AsDateHoursAndMinutes(x.DateAndTime);
-            var yAsDateAndHours = AsDateHoursAndMinutes(y.DateAndTime);
+            if (x != null && y != null)
+            {
+                var xAsDateAndHours = AsDateHoursAndMinutes(x.DateAndTime);
+               
+                    var yAsDateAndHours = AsDateHoursAndMinutes(y.DateAndTime);
 
-            return xAsDateAndHours.Equals(yAsDateAndHours);
+                    return xAsDateAndHours.Equals(yAsDateAndHours);
+            }
+
+            return false;
         }
 
-        private DateTime AsDateHoursAndMinutes(DateTime dateTime)
+        private static DateTime AsDateHoursAndMinutes(DateTime dateTime)
         {
             return new DateTime(dateTime.Year, dateTime.Month,
                 dateTime.Day, dateTime.Hour,
